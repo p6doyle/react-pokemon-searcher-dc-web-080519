@@ -1,0 +1,17 @@
+makePokeCards = () => {
+if (this.props.searchText === pokemon.name.includes(this.props.searchText))
+{return this.props.allPokemon.map(pokemon =>{
+    return <PokemonCard {...pokemon}/>})}
+return this.props.allPokemon.map(pokemon =>{
+    return < PokemonCard {...pokemon}/>
+})}
+
+
+getFilteredPokemon(){
+return this.props.allPokemon.filter(pokemon => pokemon.name.includes(this.props.searchText))
+}
+
+
+specificPokemon = () => {
+
+}

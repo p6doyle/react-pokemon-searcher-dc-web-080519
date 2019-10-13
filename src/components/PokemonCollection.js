@@ -2,25 +2,21 @@ import React from 'react'
 import PokemonCard from './PokemonCard'
 import { Card } from 'semantic-ui-react'
 
+
 class PokemonCollection extends React.Component {
 
-  specificPokemon = () => {
-    
-  }
-
   makePokeCards = () => {
-  if (this.props.searchText === pokemon.name.includes(this.props.searchText))
-  {return this.props.allPokemon.map(pokemon =>{
-      return <PokemonCard {...pokemon}/>})}
-  return this.props.allPokemon.map(pokemon =>{
-      return < PokemonCard {...pokemon}/>
-  })}
+    let fullPokemonArray = this.props.allPokemon
+    return fullPokemonArray.map(pokemon =>{
+    return <PokemonCard {...pokemon} />})}
 
-  getFilteredPokemon(){
-  return this.props.allPokemon.filter(pokemon => pokemon.name.includes(this.props.searchText))
-}
-
-
+  pokeFilter = () => {
+    let fullPokemonArray = this.props.allPokemon
+    let selectedPokemon = fullPokemonArray.filter(pokemon =>
+    pokemon.name.includes(this.props.searchText))
+    return selectedPokemon
+    console.log(selectedPokemon)
+  }
 
   render() {
     return (
@@ -29,6 +25,7 @@ class PokemonCollection extends React.Component {
       <Card.Group itemsPerRow={6}>
         <br></br>
         {this.makePokeCards()}
+        {this.pokeFilter()}
       </Card.Group>
       </div>
     )
