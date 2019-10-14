@@ -7,6 +7,13 @@ import _ from 'lodash'
 const URL = 'http://localhost:3000/pokemon'
 
 class PokemonPage extends React.Component {
+  pokeFilter = () => {
+    let fullPokemonArray = this.state.allPokemon
+    let selectedPokemon = fullPokemonArray.filter(pokemon => {
+      return pokemon.name.includes(this.props.searchText)})
+      console.log(selectedPokemon)
+      return selectedPokemon
+    }
 
   constructor(){
     super()
@@ -22,12 +29,13 @@ class PokemonPage extends React.Component {
   }
 
   pokeSearch = (e, obj) => {
-    console.log(obj.value)
+    console.log("this is to test search", obj.value)
     this.setState({searchText: obj.value})
   }
 
+
   render() {
-    console.log(this.state.allPokemon)
+    console.log(this.pokeFilter())
     return (
       <div>
         <h1>Pokemon Searcher</h1>
@@ -40,7 +48,8 @@ class PokemonPage extends React.Component {
         <br />
         <PokemonCollection
         allPokemon={this.state.allPokemon}
-        searchText={this.state.searchText}/>
+        searchText={this.state.searchText}
+        selectedPokemon={this.state.pokeFilter}/>
       </div>
     )
   }
