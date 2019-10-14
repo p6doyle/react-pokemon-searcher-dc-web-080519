@@ -17,7 +17,7 @@ class PokemonPage extends React.Component {
 
   constructor(){
     super()
-    this.state={allPokemon: [], filter: null}
+    this.state={allPokemon: [], searchText: null}
   }
 
   componentDidMount(){
