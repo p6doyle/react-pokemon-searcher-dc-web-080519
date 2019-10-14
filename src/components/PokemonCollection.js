@@ -6,7 +6,7 @@ import { Card } from 'semantic-ui-react'
 class PokemonCollection extends React.Component {
 
   makeSelectedPokeCards = () => {
-    let selectedPokemon = this.props.selectedPokemon
+    let selectedPokemon = this.props.selectedPokemon()
     console.log(selectedPokemon)
     return selectedPokemon.map(pokemon =>{
     return <PokemonCard {...pokemon} />})}
