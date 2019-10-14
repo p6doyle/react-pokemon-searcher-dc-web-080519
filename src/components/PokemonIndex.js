@@ -2,6 +2,8 @@ import React from 'react'
 import PokemonCollection from './PokemonCollection'
 import PokemonForm from './PokemonForm'
 import { Search } from 'semantic-ui-react'
+import PokemonCard from './PokemonCard'
+import { Card } from 'semantic-ui-react'
 import _ from 'lodash'
 
 const URL = 'http://localhost:3000/pokemon'
@@ -10,7 +12,7 @@ class PokemonPage extends React.Component {
   pokeFilter = () => {
     let fullPokemonArray = this.state.allPokemon
     let selectedPokemon = fullPokemonArray.filter(pokemon => {
-      return pokemon.name.includes(this.props.searchText)})
+      return pokemon.name.includes(this.state.searchText)})
       console.log(selectedPokemon)
       return selectedPokemon
     }
@@ -33,9 +35,15 @@ class PokemonPage extends React.Component {
     this.setState({searchText: obj.value})
   }
 
+  makeAllPokeCards = () => {
+    let fullPokemonArray = this.state.allPokemon
+    return fullPokemonArray.map(pokemon =>{
+    return <PokemonCard {...pokemon} />})
+  }
 
   render() {
     console.log(this.pokeFilter())
+
     return (
       <div>
         <h1>Pokemon Searcher</h1>
@@ -49,7 +57,7 @@ class PokemonPage extends React.Component {
         <PokemonCollection
         allPokemon={this.state.allPokemon}
         searchText={this.state.searchText}
-        selectedPokemon={this.state.pokeFilter}/>
+        selectedPokemon={this.pokeFilter()}/>
       </div>
     )
   }
