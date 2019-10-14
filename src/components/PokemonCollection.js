@@ -12,6 +12,7 @@ class PokemonCollection extends React.Component {
     return <PokemonCard {...pokemon} />})}
 
   render() {
+    this.makeSelectedPokeCards()
     return (
       <div>
       <h1>Hello From Pokemon Collection</h1>

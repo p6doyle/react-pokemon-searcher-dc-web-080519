@@ -55,7 +55,7 @@ class PokemonPage extends React.Component {
         <PokemonCollection
         allPokemon={this.state.allPokemon}
         searchText={this.state.searchText}
-        selectedPokemon={this.state.pokeFilter}/>
+        selectedPokemon={this.pokeFilter}/>
       </div>
     )
   }
