@@ -42,8 +42,6 @@ class PokemonPage extends React.Component {
   }
 
   render() {
-    console.log(this.pokeFilter())
-
     return (
       <div>
         <h1>Pokemon Searcher</h1>
@@ -57,7 +55,7 @@ class PokemonPage extends React.Component {
         <PokemonCollection
         allPokemon={this.state.allPokemon}
         searchText={this.state.searchText}
-        selectedPokemon={this.pokeFilter()}/>
+        selectedPokemon={this.state.pokeFilter}/>
       </div>
     )
   }
