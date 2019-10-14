@@ -15,7 +15,6 @@ class PokemonCollection extends React.Component {
     this.makeSelectedPokeCards()
     return (
       <div>
-      <h1>Hello From Pokemon Collection</h1>
       <Card.Group itemsPerRow={6}>
         <br></br>
         {this.makeSelectedPokeCards}

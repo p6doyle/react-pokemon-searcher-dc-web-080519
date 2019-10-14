@@ -52,10 +52,14 @@ class PokemonPage extends React.Component {
         onSearchChange={_.debounce(this.pokeSearch, 500)} showNoResults={false}
         onSearch={this.changeSearchText} />
         <br />
+        <Card.Group itemsPerRow={6}>
+        <h1>Hello From Pokemon Collection</h1>
+        <br></br>
         <PokemonCollection
-        allPokemon={this.state.allPokemon}
         searchText={this.state.searchText}
         selectedPokemon={this.pokeFilter}/>
+        {this.makeAllPokeCards()}
+        </Card.Group>
       </div>
     )
   }
