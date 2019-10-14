@@ -15,3 +15,11 @@ return this.props.allPokemon.filter(pokemon => pokemon.name.includes(this.props.
 specificPokemon = () => {
 
 }
+
+
+
+  makeAllPokeCards = () => {
+    let fullPokemonArray = this.state.allPokemon
+    return fullPokemonArray.map(pokemon =>{
+    return <PokemonCard {...pokemon} />})
+  }

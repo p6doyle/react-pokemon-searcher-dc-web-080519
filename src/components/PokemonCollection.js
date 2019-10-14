@@ -17,7 +17,7 @@ class PokemonCollection extends React.Component {
       <div>
       <Card.Group itemsPerRow={6}>
         <br></br>
-        {this.makeSelectedPokeCards}
+        {this.makeSelectedPokeCards()}
       </Card.Group>
       </div>
     )
